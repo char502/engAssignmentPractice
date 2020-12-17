@@ -1,0 +1,69 @@
+.container {
+  background-color: lightsteelblue;
+  max-width: 1600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 0 30px 0;
+}
+
+/* form {
+  text-align: center;
+} */
+
+.donation-form-wrapper {
+  background-color: whitesmoke;
+  max-width: 1400px;
+  margin: 0 auto;
+  list-style-type: none;
+  padding: 0;
+  border-radius: 3px;
+  /* text-align: center; */
+}
+
+.form-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5em;
+}
+
+.form-row > label {
+  padding: 0.5em 1em 0.5em 0;
+  flex: 1;
+}
+.form-row > input,
+select {
+  flex: 2;
+}
+.form-row > input {
+  padding: 0.5em;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+td,
+th {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px 20px;
+}
+
+th {
+  background-color: rgb(235, 235, 235);
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background-color: rgb(250, 250, 250);
+}
+
+tr:nth-child(odd) td {
+  background-color: rgb(245, 245, 245);
+}

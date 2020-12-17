@@ -9,11 +9,69 @@
 
 <body>
     <!-- <h1>Hangman Game</h1> -->
+    <div class="container">
+        <form action="">
+            <div class="donation-title">
+                <h2>Charity Donations</h2>
+                <h4>Please Enter the amount for donation</h4>
+            </div>
+            <ul class="donation-form-wrapper">
+                <li class="donation-inputs__amount form-row">
+                    <label for="donation--amount">Amount to Donate (£)
+                        <input type="number" id="donation--amount" name="donation--amount" min="0" max="1000">
+                    </label>
+                </li>
+                <li class="donation-inputs__type form-row">
+                    <label for="donation--type">Please Select a donation type
+                        <select name="donation--type" id="donation--type">
+                            <div>
+                                <option hidden>Choose Donation type</option>
+                                <option value="equal">Equal</option>
+                                <option value="more-odd">More on Odd Days</option>
+                            </div>
+                        </select>
+                    </label>
+                </li>
+                <li class="donation-inputs__result form-row">
+                    <label for="donation--result">Total
+                        <input type="number" id="donation--result" name="donation--result">
+                    </label>
+                </li>
+                <li class="donation-inputs__result form-row">
+                    <label for="donation--resultAsTable">Results Table
+                        <table>
+                            <tr>
+                                <td>Amount(£)</td>
+                                <td>Split Type</td>
+                                <td>Day 1</td>
+                                <td>Day 2</td>
+                                <td>Day 3</td>
+                                <td>Day 4</td>
+                                <td>Day 5</td>
+                                <td>Day 6</td>
+                                <td>Day 7</td>
+                                <td>Day 8</td>
+                                <td>Day 9</td>
+                                <td>Day 10</td>
+                            </tr>
+                            <tr>
+                                <td>Amount</td>
+                                <td>Equal/Odd</td>
+                                <td>Result 1</td>
+                                <td>Result 2</td>
+                                <td>Result 3</td>
+                                <td>Result 4</td>
+                                <td>Result 5</td>
+                                <td>Result 6</td>
+                                <td>Result 7</td>
+                                <td>Result 8</td>
+                                <td>Result 9</td>
+                                <td>Result 10</td>
+                            </tr>
 
-    <div>
-        <h1>Charity Donations</h1>
+                        </table>
+                    </label>
+                </li>
+            </ul>
+        </form>
     </div>
-    <script src="js/app.js"></script>
-</body>
-
-</html>
