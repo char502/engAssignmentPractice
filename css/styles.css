@@ -18,28 +18,46 @@
   padding: 0;
   border-radius: 3px;
   /* text-align: center; */
+  margin-bottom: 50px;
 }
 
 .form-row {
   display: flex;
   justify-content: flex-end;
   padding: 0.5em;
+  box-sizing: border-box;
 }
 
 .form-row > label {
-  padding: 0.5em 1em 0.5em 0;
+  padding: 0.5em 1em 0.5em 1em;
   flex: 1;
 }
+
+hr.solid {
+  border-top: 3px solid #bbb;
+  width: 75%;
+  padding: 1px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 0 auto;
+}
+
 .form-row > input,
 select {
   flex: 2;
 }
+
 .form-row > input {
   padding: 0.5em;
 }
 
 table {
   margin: 0 auto;
+  margin-bottom: 20px;
   border-collapse: collapse;
   border: 2px solid rgb(200, 200, 200);
   letter-spacing: 1px;
