@@ -10,7 +10,7 @@
 <body>
     <!-- <h1>Hangman Game</h1> -->
     <div class="container">
-        <form action="">
+        <form name="dataFromForm">
             <div class="donation-title">
                 <h2>Charity Donations</h2>
                 <h4>Please Enter the amount for donation</h4>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="donation-inputs__result form-row">
                     <label for="donation--resultAsTable">Results Table
-                        <table>
+                        <!-- <table>
                             <tr>
                                 <td>Amount(£)</td>
                                 <td>Spdivt Type</td>
@@ -74,8 +74,35 @@
                                 <td>Result 9</td>
                                 <td>Result 10</td>
                             </tr>
+                        </table> -->
+                        <table id="tbl">
+                            <thead>
+                                <th>Amount(£)</th>
+                                <th>Split Type</th>
+                                <th>Day 1</th>
+                                <th>Day 2</th>
+                                <th>Day 3</th>
+                                <th>Day 4</th>
+                                <th>Day 5</th>
+                                <th>Day 6</th>
+                                <th>Day 7</th>
+                                <th>Day 8</th>
+                                <th>Day 9</th>
+                                <th>Day 10</th>
+                            </thead>
+                           
+                            <tbody id="dataGoesHere">
+                                <tr>
+                                    <td id="donation"></td>
+                                    <td id="split-type"></td>
+                                </tr>
+                            </tbody>
                         </table>
                     </label>
+                </div>
+
+                <div class="donation-inputs__reset form-row">
+                    <button type="button" onclick="reset()" id="reset--button" name="donation--button" style="width: 70px;">Reset</button>
                 </div>
             </ul>
         </form>
