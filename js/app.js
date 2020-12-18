@@ -15,14 +15,23 @@ let getInputValue = () => {
                 
                 let i = 10;
         
-                if (amountValue % 10 === 0) {
-                while (amountValue > 0 && i > 0) { 
-                let a = Math.floor(amountValue / i / 10 ) * 10 ; 
-                amountValue -= a; 
-                // console.log(amountValue)
-                i--; 
-                newArr.push(a);
-            } 
+                if (amountValue > 100) {
+
+                    let remainder = amountValue - 100;
+                    amountValue = amountValue - remainder
+                
+                    while (amountValue > 0 && i > 0) { 
+
+                        let a = Math.floor(amountValue / i / 10 ) * 10 ; 
+                        amountValue -= a; 
+                        i--; 
+                        newArr.push(a);
+                    } 
+
+            let lastElem = newArr[newArr.length -1]
+            let lastElemPlusRemainder = lastElem + remainder
+            newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
+
         } else {
             console.log('not divisible by 10')
         }
