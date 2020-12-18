@@ -11,38 +11,33 @@ let getInputValue = () => {
 
     let newArr = []
 
-            if (selectedSplitType === 'equal') {
-                
-                let i = 10;
-        
-                if (amountValue > 100) {
+        if (selectedSplitType === 'equal') {
+            let newArr = [];
+            let currentSum = 0;
 
-                    let remainder = amountValue - 100;
-                    amountValue = amountValue - remainder
-                
-                    while (amountValue > 0 && i > 0) { 
+                for (var i = 0; i < 10; i++) {
 
-                        let a = Math.floor(amountValue / i / 10 ) * 10 ; 
-                        amountValue -= a; 
-                        i--; 
-                        newArr.push(a);
-                    } 
+                let num = parseFloat((amountValue / 10).toString().match(/^-?\d+(?:\.\d{0,2})?/))
 
-            let lastElem = newArr[newArr.length -1]
-            let lastElemPlusRemainder = lastElem + remainder
-            newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
+                newArr.push(num)
+            }
 
-        } else {
-            console.log('not divisible by 10')
-        }
+        let total = (newArr.reduce((a, b) => a + b))
+        let rounded = Math.round(total * 10) / 10
+        let difference = parseFloat((amountValue - rounded).toFixed(2))
+
+        let lastElem = newArr[newArr.length -1]
+        let lastElemPlusRemainder = lastElem + difference
+        newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
+
 
         diaplayResults(newArr)
 
-    } else if (selectedSplitType === 'more-odd') {
+        } else if (selectedSplitType === 'more-odd') {
+        alert('more-odd not calculating yet')
+        }
 
     }
-
-}
 
 const diaplayResults = (newArr) => {
     // console.log(newArr)
