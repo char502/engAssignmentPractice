@@ -6,10 +6,6 @@
   padding: 10px 0 30px 0;
 }
 
-/* form {
-  text-align: center;
-} */
-
 .donation-form-wrapper {
   background-color: whitesmoke;
   max-width: 1400px;
@@ -44,6 +40,12 @@ hr.solid {
 
 button {
   margin: 0 auto;
+  height: 25px;
+  width: 100px;
+  background-color: lightsteelblue;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
 }
 
 .form-row > input,

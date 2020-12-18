@@ -4,11 +4,9 @@
 <head>
     <title>Charity Donations</title>
     <link href="css/styles.css" rel="stylesheet" />
-    <!-- <link href="images/favicon.png" rel="icon" /> -->
 </head>
 
 <body>
-    <!-- <h1>Hangman Game</h1> -->
     <div class="container">
         <form name="dataFromForm">
             <div class="donation-title">
@@ -38,70 +36,34 @@
                 <div class="donation-inputs__button form-row">
                         <button type="button" onclick="getInputValue()" id="donation--button" name="donation--button" style="width: 70px;">Calculate</button>
                 </div>
-                <div class="donation-inputs__result form-row">
-                    <label for="donation--result">Total:
-                        <input type="number" id="donation--result" name="donation--result" style="width: 100px;">
-                    </label>
-                </div>
-                <div class="donation-inputs__result form-row">
+                <div class="donation-inputs__result form-row" style="padding-top: 20px;">
                     <label for="donation--resultAsTable">Results Table
-                        <!-- <table>
-                            <tr>
-                                <td>Amount(£)</td>
-                                <td>Spdivt Type</td>
-                                <td>Day 1</td>
-                                <td>Day 2</td>
-                                <td>Day 3</td>
-                                <td>Day 4</td>
-                                <td>Day 5</td>
-                                <td>Day 6</td>
-                                <td>Day 7</td>
-                                <td>Day 8</td>
-                                <td>Day 9</td>
-                                <td>Day 10</td>
-                            </tr>
-                            <tr>
-                                <td>Amount</td>
-                                <td>Equal/Odd</td>
-                                <td>Result 1</td>
-                                <td>Result 2</td>
-                                <td>Result 3</td>
-                                <td>Result 4</td>
-                                <td>Result 5</td>
-                                <td>Result 6</td>
-                                <td>Result 7</td>
-                                <td>Result 8</td>
-                                <td>Result 9</td>
-                                <td>Result 10</td>
-                            </tr>
-                        </table> -->
-                        <table id="tbl">
-                            <thead>
-                                <th>Amount(£)</th>
-                                <th>Split Type</th>
-                                <th>Day 1</th>
-                                <th>Day 2</th>
-                                <th>Day 3</th>
-                                <th>Day 4</th>
-                                <th>Day 5</th>
-                                <th>Day 6</th>
-                                <th>Day 7</th>
-                                <th>Day 8</th>
-                                <th>Day 9</th>
-                                <th>Day 10</th>
-                            </thead>
-                           
-                            <tbody id="dataGoesHere">
-                                <tr>
-                                    <td id="donation"></td>
-                                    <td id="split-type"></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div style="padding-top: 20px;">
+                            <table id="tbl">
+                                <thead>
+                                    <th>Amount(£)</th>
+                                    <th>Split Type</th>
+                                    <th>Day 1</th>
+                                    <th>Day 2</th>
+                                    <th>Day 3</th>
+                                    <th>Day 4</th>
+                                    <th>Day 5</th>
+                                    <th>Day 6</th>
+                                    <th>Day 7</th>
+                                    <th>Day 8</th>
+                                    <th>Day 9</th>
+                                    <th>Day 10</th>
+                                </thead>
+                            
+                                <tbody id="dataGoesHere">
+                            
+                                </tbody>
+                            </table>
+                        </div>
                     </label>
                 </div>
 
-                <div class="donation-inputs__reset form-row">
+                <div class="donation-inputs__reset form-row" style="padding: 20px;">
                     <button type="button" onclick="reset()" id="reset--button" name="donation--button" style="width: 70px;">Reset</button>
                 </div>
             </ul>
