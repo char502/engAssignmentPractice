@@ -8,12 +8,12 @@
 
 <body>
     <div class="container">
-        <form name="dataFromForm">
+        <form name="dataFromForm" id="dataFromForm">
             <div class="donation-title">
                 <h2>Charity Donations</h2>
                 <h4>Please Enter the amount for donation</h4>
             </div>
-            <ul class="donation-form-wrapper">
+            <div class="donation-form-wrapper">
                 <div class="donation-inputs__amount form-row">
                     <label for="donation--amount">Amount to Donate (£):
                         <input type="number" id="donation--amount" name="donation--amount" style="width: 100px;">
@@ -34,7 +34,7 @@
                 <hr class="solid">
 
                 <div class="donation-inputs__button form-row">
-                        <button type="button" onclick="getInputValues()" id="donation--button" name="donation--button" style="width: 70px;">Calculate</button>
+                        <button type="button" onclick="calculateResults()" id="donation--button" name="donation--button" style="width: 70px;">Calculate</button>
                 </div>
                 <div class="donation-inputs__result form-row" style="padding-top: 20px;">
                     <label for="donation--resultAsTable">Results Table
@@ -63,10 +63,10 @@
                     </label>
                 </div>
 
-                <div class="donation-inputs__reset form-row" style="padding: 20px;">
-                    <button type="button" onclick="reset()" id="reset--button" name="donation--button" style="width: 70px;">Reset</button>
+                <div class="donation-inputs__resetButton form-row" style="padding: 20px;">
+                    <button type="button" onclick="resetCalculator()" id="reset--button" name="reset--button" style="width: 70px;">Reset</button>
                 </div>
-            </ul>
+            </div>
         </form>
     </div>
     <script src="js/app.js"></script>

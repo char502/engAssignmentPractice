@@ -1,14 +1,11 @@
-let amountValue = 0;
+let amountValue = 0
+let selectedSplitType = ""
+let newArr = []
 
-
-let getInputValues = () => {
+let calculateResults = () => {
 
     amountValue = document.getElementById("donation--amount").value
-
-    let splitType = document.getElementById("donation--type")
-    let selectedSplitType = splitType.value
-
-    let newArr = []
+    selectedSplitType = document.getElementById("donation--type").value
 
         if (selectedSplitType === 'equal') {
             
@@ -25,11 +22,19 @@ let getInputValues = () => {
         let lastElemPlusRemainder = parseFloat((lastElem + difference).toFixed(2))
         newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
 
+        console.log(newArr)
+
         displayResults(newArr)
 
-        } else if (selectedSplitType === 'more-odd') {
+            newArr = [];
+            amountValue.value = 0
+            selectedSplitType.value = ""
 
-            let newArr = [];
+            console.log(newArr)
+            console.log(amountValue.value)
+            console.log(selectedSplitType.value)
+
+        } else if (selectedSplitType === 'more-odd') {
 
                 for (let i = 0; i < 15; i++) {
 
@@ -53,41 +58,63 @@ let getInputValues = () => {
             let lastElemPlusRemainder = parseFloat((lastElem + difference).toFixed(2))
             newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
 
+            console.log(newArr)
             displayResults(newArr)
+
+            newArr = [];
+            amountValue.value = 0
+            selectedSplitType.value = ""
+
+            console.log(newArr)
+            console.log(amountValue.value)
+            console.log(selectedSplitType.value)
 
         }
     }
 
-const displayResults = (newArr) => {
-    // console.log(newArr)
-    let inputAmount = document.getElementById("donation--amount").value
-    // console.log(inputAmount)
+    const displayResults = (newArr) => {
 
-    let splitType = document.getElementById("donation--type")
-    let selectedSplitType = splitType.value
-    // console.log(selectedSplitType)
+        amountValue = document.getElementById("donation--amount").value
+        selectedSplitType = document.getElementById("donation--type").value
+        let tableRows
 
-    let tableRows = document.getElementById("dataGoesHere")
-    let row = tableRows.insertRow(0);
+        tableRows = document.getElementById("dataGoesHere")
+        console.timeLog(tableRows)
+        let row = tableRows.insertRow(0);
 
-    let cell1 = row.insertCell(0)
-    let cell2 = row.insertCell(1)
+        let cell1 = row.insertCell(0)
+        let cell2 = row.insertCell(1)
 
-    cell1.innerHTML = `${inputAmount}`
-    cell2.innerHTML = `${selectedSplitType}`
+        cell1.innerHTML = `${amountValue}`
+        cell2.innerHTML = `${selectedSplitType}`
 
-    for (let i = 0; i < newArr.length; i++) {
-        let counter = 3
-        let cell = `cell${counter + i}`
-        cell = row.insertCell(`${counter -1 + i}`)
-        cell.innerHTML = `${newArr[i]}`
+        for (let i = 0; i < newArr.length; i++) {
+            let counter = 3
+            let cell = `cell${counter + i}`
+            cell = row.insertCell(`${counter -1 + i}`)
+            cell.innerHTML = `${newArr[i]}`
+        }
+
+        // newArr = [];
+        // amountValue.value = 0
+        // selectedSplitType.value = ""
+
+        // console.log(newArr)
+        // console.log(amountValue.value)
+        // console.log(selectedSplitType.value)
     }
-}
 
-
-let reset = () => {
-    alert('reset button clicked')
-    amountValue = 0
-    selectedSplitType = ""
+let resetCalculator = () => {
+  console.log('reset button clicked')  
+    document.getElementById('dataFromForm').reset()
     newArr = []
+
+    let tableData = document.getElementById('dataGoesHere')
+    console.log(tableData)
+
+    for(let i = tableData.rows.length - 1; i >= 0; i--) {
+    tableData.deleteRow(i);
+    }
+
+    
 }
