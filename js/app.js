@@ -1,5 +1,6 @@
 let amountValue = 0;
 
+
 let getInputValues = () => {
 
     amountValue = document.getElementById("donation--amount").value
@@ -24,7 +25,7 @@ let getInputValues = () => {
         let lastElemPlusRemainder = parseFloat((lastElem + difference).toFixed(2))
         newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
 
-    displayResults(newArr)
+        displayResults(newArr)
 
         } else if (selectedSplitType === 'more-odd') {
 
