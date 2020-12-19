@@ -1,24 +1,19 @@
 let amountValue = 0;
 
 
-let getInputValue = () => {
+let getInputValues = () => {
 
     amountValue = document.getElementById("donation--amount").value
 
     let splitType = document.getElementById("donation--type")
     let selectedSplitType = splitType.value
-    // alert(`You selected: ${amountValue} and ${selectedSplitType}`)
 
     let newArr = []
 
         if (selectedSplitType === 'equal') {
-            let newArr = [];
-            let currentSum = 0;
-
+            
                 for (var i = 0; i < 10; i++) {
-
                 let num = parseFloat((amountValue / 10).toString().match(/^-?\d+(?:\.\d{0,2})?/))
-
                 newArr.push(num)
             }
 
@@ -27,19 +22,22 @@ let getInputValue = () => {
         let difference = parseFloat((amountValue - rounded).toFixed(2))
 
         let lastElem = newArr[newArr.length -1]
-        let lastElemPlusRemainder = lastElem + difference
+        let lastElemPlusRemainder = parseFloat((lastElem + difference).toFixed(2))
         newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
 
-
-        diaplayResults(newArr)
+        displayResults(newArr)
 
         } else if (selectedSplitType === 'more-odd') {
-        alert('more-odd not calculating yet')
-        }
 
+            alert('more-odd not calculating yet')
+
+
+
+        
+        }
     }
 
-const diaplayResults = (newArr) => {
+const displayResults = (newArr) => {
     // console.log(newArr)
     let inputAmount = document.getElementById("donation--amount").value
     // console.log(inputAmount)
@@ -48,9 +46,7 @@ const diaplayResults = (newArr) => {
     let selectedSplitType = splitType.value
     // console.log(selectedSplitType)
 
-
     let tableRows = document.getElementById("dataGoesHere")
-
     let row = tableRows.insertRow(0);
 
     let cell1 = row.insertCell(0)
@@ -60,12 +56,9 @@ const diaplayResults = (newArr) => {
     cell2.innerHTML = `${selectedSplitType}`
 
     for (let i = 0; i < newArr.length; i++) {
-
         let counter = 3
-
         let cell = `cell${counter + i}`
         cell = row.insertCell(`${counter -1 + i}`)
-
         cell.innerHTML = `${newArr[i]}`
     }
 }
