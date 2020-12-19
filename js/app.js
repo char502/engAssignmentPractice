@@ -1,6 +1,5 @@
 let amountValue = 0;
 
-
 let getInputValues = () => {
 
     amountValue = document.getElementById("donation--amount").value
@@ -25,7 +24,7 @@ let getInputValues = () => {
         let lastElemPlusRemainder = parseFloat((lastElem + difference).toFixed(2))
         newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
 
-        displayResults(newArr)
+    displayResults(newArr)
 
         } else if (selectedSplitType === 'more-odd') {
 
@@ -38,28 +37,21 @@ let getInputValues = () => {
                      newArr.push(num)
                 }
 
-                 //   console.log(newArr)
-
                 newArr.splice(10)
-                //   console.log(newArr)
 
                 for (let i = 0; i < 10; i += 2) {
                     let double = newArr[i] * 2
                     newArr.splice(i, 1, double)
                 }
-                // console.log(newArr)
 
             let total = (newArr.reduce((a, b) => a + b))
             let rounded = Math.round(total * 10) / 10
             let difference = parseFloat((amountValue - rounded).toFixed(2))
 
-
             let lastElem = newArr[newArr.length -1]
             let lastElemPlusRemainder = parseFloat((lastElem + difference).toFixed(2))
             newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
 
-
-            // console.log(newArr)
             displayResults(newArr)
 
         }
@@ -94,4 +86,7 @@ const displayResults = (newArr) => {
 
 let reset = () => {
     alert('reset button clicked')
+    amountValue = 0
+    selectedSplitType = ""
+    newArr = []
 }
