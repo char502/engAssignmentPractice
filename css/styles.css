@@ -13,7 +13,6 @@
   list-style-type: none;
   padding: 0;
   border-radius: 3px;
-  /* text-align: center; */
   margin-bottom: 50px;
 }
 
@@ -27,6 +26,23 @@
 .form-row > label {
   padding: 0.5em 1em 0.5em 1em;
   flex: 1;
+}
+
+.donation-guide {
+  text-align: center;
+  background-color: lightsteelblue;
+  width: 500px;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 3px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border: 2px solid grey;
+  border-style: dashed;
+}
+
+.donation-guide--highlighting {
+  font-weight: bold;
 }
 
 hr.solid {
