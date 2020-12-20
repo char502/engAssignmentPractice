@@ -1,5 +1,6 @@
 ## Charity Donations Practical
 The App can be viewed at: https://char502.github.io/engAssignmentPractice/.
+
 &nbsp;
 ### An App that automates charity donations across a ten-day period
 
