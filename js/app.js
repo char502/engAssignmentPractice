@@ -1,13 +1,16 @@
-let amountValue = 0
-let selectedSplitType = ""
-let newArr = []
+let amountValue = 0;
+let selectedSplitType = "";
+let newArr = [];
+let button = "";
 
 let calculateResults = () => {
+
+    button = document.getElementById("donation--button")
 
     amountValue = document.getElementById("donation--amount").value
     selectedSplitType = document.getElementById("donation--type").value
 
-        if (selectedSplitType === 'equal') {
+        if (selectedSplitType === "equal") {
             
                 for (let i = 0; i < 10; i++) {
                 let num = parseFloat((amountValue / 10).toString().match(/^-?\d+(?:\.\d{0,2})?/))
@@ -22,19 +25,17 @@ let calculateResults = () => {
         let lastElemPlusRemainder = parseFloat((lastElem + difference).toFixed(2))
         newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
 
-        console.log(newArr)
-
         displayResults(newArr)
 
+            button.disabled = true
+            //Reset the inputs
             newArr = [];
             amountValue.value = 0
             selectedSplitType.value = ""
 
-            console.log(newArr)
-            console.log(amountValue.value)
-            console.log(selectedSplitType.value)
+        } else if (selectedSplitType === "more-odd") {
 
-        } else if (selectedSplitType === 'more-odd') {
+            button.disabled = false
 
                 for (let i = 0; i < 15; i++) {
 
@@ -58,17 +59,13 @@ let calculateResults = () => {
             let lastElemPlusRemainder = parseFloat((lastElem + difference).toFixed(2))
             newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
 
-            console.log(newArr)
             displayResults(newArr)
 
+            button.disabled = true
+            //Reset the inputs
             newArr = [];
             amountValue.value = 0
             selectedSplitType.value = ""
-
-            console.log(newArr)
-            console.log(amountValue.value)
-            console.log(selectedSplitType.value)
-
         }
     }
 
@@ -76,10 +73,8 @@ let calculateResults = () => {
 
         amountValue = document.getElementById("donation--amount").value
         selectedSplitType = document.getElementById("donation--type").value
-        let tableRows
 
-        tableRows = document.getElementById("dataGoesHere")
-        console.timeLog(tableRows)
+        let tableRows = document.getElementById("dataGoesHere")
         let row = tableRows.insertRow(0);
 
         let cell1 = row.insertCell(0)
@@ -95,26 +90,25 @@ let calculateResults = () => {
             cell.innerHTML = `${newArr[i]}`
         }
 
-        // newArr = [];
-        // amountValue.value = 0
-        // selectedSplitType.value = ""
-
-        // console.log(newArr)
-        // console.log(amountValue.value)
-        // console.log(selectedSplitType.value)
+        //Reset the inputs
+        newArr = [];
+        amountValue.value = 0
+        selectedSplitType.value = ""
     }
 
 let resetCalculator = () => {
-  console.log('reset button clicked')  
-    document.getElementById('dataFromForm').reset()
+
+    button = document.getElementById("donation--button")
+    
+
+    document.getElementById("dataFromForm").reset()
     newArr = []
 
-    let tableData = document.getElementById('dataGoesHere')
-    console.log(tableData)
-
+    let tableData = document.getElementById("dataGoesHere")
+    
     for(let i = tableData.rows.length - 1; i >= 0; i--) {
     tableData.deleteRow(i);
-    }
 
-    
+    button.disabled = false
+    }
 }
