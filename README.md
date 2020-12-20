@@ -1,8 +1,7 @@
 ## Charity Donations Practical
 The App can be viewed at: https://char502.github.io/engAssignmentPractice/.
-&nbsp  
 
-
+&nbsp;
 ### An App that automates charity donations across a ten-day period
 
 Instructions:
@@ -11,4 +10,6 @@ Instructions:
 
 2. Select a donation type (an explantion of each type has been provided)
 
-3. Click **Calculate** to see how your donations will be stread over the 10 days as per the donation type chosen
+3. Click **Calculate** to see how your donations will be spread over the 10 days as per the donation type chosen
+
+4. Click **Reset** to clear the form and enter a new amount if required
