@@ -28,6 +28,8 @@ let calculateResults = () => {
         displayResults(newArr)
 
             button.disabled = true
+            document.getElementById("donation--amount").disabled = true
+            document.getElementById("donation--type").disabled = true
             //Reset the inputs
             newArr = [];
             amountValue.value = 0
@@ -62,6 +64,8 @@ let calculateResults = () => {
             displayResults(newArr)
 
             button.disabled = true
+            document.getElementById("donation--amount").disabled = true
+            document.getElementById("donation--type").disabled = true
             //Reset the inputs
             newArr = [];
             amountValue.value = 0
@@ -110,5 +114,7 @@ let resetCalculator = () => {
     tableData.deleteRow(i);
 
     button.disabled = false
+    document.getElementById("donation--amount").disabled = false
+    document.getElementById("donation--type").disabled = false
     }
 }
