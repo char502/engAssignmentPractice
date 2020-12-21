@@ -16,7 +16,7 @@
             <div class="donation-form-wrapper">
                 <div class="donation-inputs__amount form-row">
                     <label for="donation--amount">Amount to Donate (£):
-                        <input type="number" id="donation--amount" name="donation--amount" style="width: 100px;">
+                        <input type="number" id="donation--amount" name="donation--amount" min=0 oninput="validity.valid||(value='');" style="width: 100px;">
                     </label>
                 </div>
                 <div class="donation-inputs__type form-row">
