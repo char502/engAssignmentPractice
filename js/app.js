@@ -3,12 +3,28 @@ let selectedSplitType = "";
 let newArr = [];
 let button = "";
 
-let calculateResults = () => {
+const person={
+    person:name}
+
+const calculateResults = () => {
 
     button = document.getElementById("donation--button")
 
     amountValue = document.getElementById("donation--amount").value
     selectedSplitType = document.getElementById("donation--type").value
+
+        calculationDonation(amountValue, selectedSplitType)
+
+        button.disabled = true
+            document.getElementById("donation--amount").disabled = true
+            document.getElementById("donation--type").disabled = true
+            //Reset the inputs
+            newArr = [];
+            amountValue.value = 0
+            selectedSplitType.value = ""
+    }
+
+    const calculationDonation = (amountValue, selectedSplitType) => {
 
         if (selectedSplitType === "equal") {
             
@@ -26,14 +42,6 @@ let calculateResults = () => {
         newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
 
         displayResults(newArr)
-
-            button.disabled = true
-            document.getElementById("donation--amount").disabled = true
-            document.getElementById("donation--type").disabled = true
-            //Reset the inputs
-            newArr = [];
-            amountValue.value = 0
-            selectedSplitType.value = ""
 
         } else if (selectedSplitType === "more-odd") {
 
@@ -62,14 +70,6 @@ let calculateResults = () => {
             newArr.splice(newArr.length -1, 1, lastElemPlusRemainder)
 
             displayResults(newArr)
-
-            button.disabled = true
-            document.getElementById("donation--amount").disabled = true
-            document.getElementById("donation--type").disabled = true
-            //Reset the inputs
-            newArr = [];
-            amountValue.value = 0
-            selectedSplitType.value = ""
         }
     }
 
@@ -100,21 +100,21 @@ let calculateResults = () => {
         selectedSplitType.value = ""
     }
 
-let resetCalculator = () => {
+const resetCalculator = () => {
 
     button = document.getElementById("donation--button")
-    
 
     document.getElementById("dataFromForm").reset()
+    
     newArr = []
 
     let tableData = document.getElementById("dataGoesHere")
     
-    for(let i = tableData.rows.length - 1; i >= 0; i--) {
-    tableData.deleteRow(i);
+        for(let i = tableData.rows.length - 1; i >= 0; i--) {
+        tableData.deleteRow(i);
 
-    button.disabled = false
-    document.getElementById("donation--amount").disabled = false
-    document.getElementById("donation--type").disabled = false
-    }
+        button.disabled = false
+        document.getElementById("donation--amount").disabled = false
+        document.getElementById("donation--type").disabled = false
+        }
 }
