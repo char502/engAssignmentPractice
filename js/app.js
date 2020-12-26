@@ -5,6 +5,7 @@ let button = '';
 
 const calculateResults = () => {
   button = document.getElementById('donation--button');
+
   amountValue = document.getElementById('donation--amount').value;
   selectedSplitType = document.getElementById('donation--type').value;
 
