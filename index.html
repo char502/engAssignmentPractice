@@ -16,7 +16,7 @@
             <div class="donation-form-wrapper">
                 <div class="donation-inputs__amount form-row">
                     <label for="donation--amount">Amount to Donate (£):
-                        <input type="number" id="donation--amount" name="donation--amount"  style="width: 100px;">
+                        <input type="number" id="donation--amount" name="donation--amount" style="width: 100px;" min="1" max="10000">
                     </label>
                 </div>
                 <div class="donation-inputs__type form-row">
@@ -36,49 +36,47 @@
                     <p><span class="donation-guide--highlighting">Equal: </span>The same amount to be donated every day</p>
                     <p><span class="donation-guide--highlighting">More-Odd: </span>Double the amount to be donated on odd-numbered days</p>
                 </div>
-                
+
                 <hr class="solid">
 
                 <div class="donation-inputs__button form-row">
-                        <button type="submit" onclick="calculateResults()" id="donation--button" name="donation--button" style="width: 70px;">Calculate</button>
+                    <button type="submit" onclick="calculateResults()" id="donation--button" name="donation--button" style="width: 70px;">Calculate</button>
                 </div>
-                
+
             </div>
         </form>
 
         <div class="donation-inputs__result form-row" style="padding-top: 20px;">
-                    <label for="donation--resultAsTable">Results Table (£)
-                        <div style="padding-top: 20px;">
-                            <table id="donation-inputs__resultTable">
-                                <thead>
-                                    <th>Amount(£)</th>
-                                    <th>Split Type</th>
-                                    <th>Day 1</th>
-                                    <th>Day 2</th>
-                                    <th>Day 3</th>
-                                    <th>Day 4</th>
-                                    <th>Day 5</th>
-                                    <th>Day 6</th>
-                                    <th>Day 7</th>
-                                    <th>Day 8</th>
-                                    <th>Day 9</th>
-                                    <th>Day 10</th>
-                                </thead>
-                            
-                                <tbody id="dataGoesHere">
-                            
-                                </tbody>
-                            </table>
-                        </div>
-                    </label>
+            <label for="donation--resultAsTable">Results Table (£)
+                <div style="padding-top: 20px;">
+                    <table id="donation-inputs__resultTable">
+                        <thead>
+                            <th>Amount(£)</th>
+                            <th>Split Type</th>
+                            <th>Day 1</th>
+                            <th>Day 2</th>
+                            <th>Day 3</th>
+                            <th>Day 4</th>
+                            <th>Day 5</th>
+                            <th>Day 6</th>
+                            <th>Day 7</th>
+                            <th>Day 8</th>
+                            <th>Day 9</th>
+                            <th>Day 10</th>
+                        </thead>
 
+                        <tbody id="dataGoesHere">
+
+                        </tbody>
+                    </table>
+                </div>
+            </label>
             <div class="donation-inputs__resetButton" style="padding: 20px;">
-                <button type="button" onclick="resetCalculator()" id="reset--button" name="reset--button" style="width: 70px;">Reset</button>
+                <button type="reset" onclick="resetCalculator()" id="reset--button" name="reset--button" style="width: 70px;">Reset</button>
             </div>
         </div>
-
-               
     </div>
     <script src="js/app.js"></script>
 </body>
+
 </html>
