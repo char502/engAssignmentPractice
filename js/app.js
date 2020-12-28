@@ -4,8 +4,8 @@ let newArr = [];
 let button = '';
 
 // Input validation
-function isNumberKey(evt, element) {
-  var charCode = evt.which ? evt.which : event.keyCode;
+const isNumberKey = (evt, element) => {
+  let charCode = evt.which ? evt.which : event.keyCode;
   if (
     charCode > 31 &&
     (charCode < 48 || charCode > 57) &&
@@ -13,20 +13,20 @@ function isNumberKey(evt, element) {
   )
     return false;
   else {
-    var len = $(element).val().length;
-    var index = $(element).val().indexOf('.');
+    let len = $(element).val().length;
+    let index = $(element).val().indexOf('.');
     if (index > 0 && charCode == 46) {
       return false;
     }
     if (index > 0) {
-      var CharAfterdot = len + 1 - index;
+      let CharAfterdot = len + 1 - index;
       if (CharAfterdot > 3) {
         return false;
       }
     }
   }
   return true;
-}
+};
 
 const calculateResults = () => {
   button = document.getElementById('donation--button');

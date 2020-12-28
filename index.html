@@ -3,13 +3,17 @@
 
 <head>
     <title>Charity Donations</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <link
+        href="css/styles.css"
+        rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <form name="dataFromForm" id="dataFromForm">
+        <form
+            name="dataFromForm"
+            id="dataFromForm">
             <div class="donation-title">
                 <h2>Charity Donations</h2>
                 <h4>Please Enter the amount for donation</h4>
@@ -17,12 +21,21 @@
             <div class="donation-form-wrapper">
                 <div class="donation-inputs__amount form-row">
                     <label for="donation--amount">Amount to Donate (£):
-                        <input type="number" id="donation--amount" name="donation--amount" style="width: 100px;" onkeypress="return isNumberKey(event, this)">
+                        <input
+                            type="number"
+                            id="donation--amount"
+                            name="donation--amount"
+                            style="width: 100px;"
+                            onkeypress="return isNumberKey(event, this)"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            maxlength="8">
                     </label>
                 </div>
                 <div class="donation-inputs__type form-row">
                     <label for="donation--type">Please Select a donation type:
-                        <select name="donation--type" id="donation--type">
+                        <select
+                            name="donation--type"
+                            id="donation--type">
                             <div>
                                 <option hidden>Choose Donation type</option>
                                 <option value="equal">Equal</option>
@@ -41,13 +54,20 @@
                 <hr class="solid">
 
                 <div class="donation-inputs__button form-row">
-                    <button type="submit" onclick="calculateResults()" id="donation--button" name="donation--button" style="width: 70px;">Calculate</button>
+                    <button
+                        type="submit"
+                        onclick="calculateResults()"
+                        id="donation--button"
+                        name="donation--button"
+                        style="width: 70px;">Calculate</button>
                 </div>
 
             </div>
         </form>
 
-        <div class="donation-inputs__result form-row" style="padding-top: 20px;">
+        <div
+            class="donation-inputs__result form-row"
+            style="padding-top: 20px;">
             <label for="donation--resultAsTable">Results Table (£)
                 <div style="padding-top: 20px;">
                     <table id="donation-inputs__resultTable">
@@ -72,8 +92,15 @@
                     </table>
                 </div>
             </label>
-            <div class="donation-inputs__resetButton" style="padding: 20px;">
-                <button type="reset" onclick="resetCalculator()" id="reset--button" name="reset--button" style="width: 70px;">Reset</button>
+            <div
+                class="donation-inputs__resetButton"
+                style="padding: 20px;">
+                <button
+                    type="reset"
+                    onclick="resetCalculator()"
+                    id="reset--button"
+                    name="reset--button"
+                    style="width: 70px;">Reset</button>
             </div>
         </div>
     </div>
