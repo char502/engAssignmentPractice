@@ -6,7 +6,7 @@ let button = '';
 // Amount to Donate field input validation
 const isNumberKey = evt => {
   let charCode = evt.which ? evt.which : event.keyCode;
-  let inputField = document.getElementById('donation--amount');
+  amountValue = document.getElementById('donation--amount');
   if (
     charCode > 31 &&
     (charCode < 48 || charCode > 57) &&
@@ -14,8 +14,8 @@ const isNumberKey = evt => {
   )
     return false;
   else {
-    let len = inputField.value.length;
-    let index = inputField.value.indexOf('.');
+    let len = amountValue.value.length;
+    let index = amountValue.value.indexOf('.');
     if (index > 0 && charCode == 46) {
       return false;
     }
