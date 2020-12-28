@@ -50,7 +50,7 @@ const calculationDonation = (amountValue, selectedSplitType) => {
   if (selectedSplitType === 'equal') {
     for (let i = 0; i < 10; i++) {
       let num = parseFloat(
-        (amountValue / 10).toString().match(/^-?\d+(?:\.\d{0,2})?/)
+        (amountValue / 10).toString().match(/\d+(?:\.\d{0,2})?/)
       );
       newArr.push(num);
     }
@@ -69,7 +69,7 @@ const calculationDonation = (amountValue, selectedSplitType) => {
 
     for (let i = 0; i < 15; i++) {
       let num = parseFloat(
-        (amountValue / 15).toString().match(/^-?\d+(?:\.\d{0,2})?/)
+        (amountValue / 15).toString().match(/\d+(?:\.\d{0,2})?/)
       );
       // console.log(num)
       newArr.push(num);
