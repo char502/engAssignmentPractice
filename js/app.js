@@ -3,9 +3,10 @@ let selectedSplitType = '';
 let newArr = [];
 let button = '';
 
-// Input validation
-const isNumberKey = (evt, element) => {
+// Amount to Donate field input validation
+const isNumberKey = evt => {
   let charCode = evt.which ? evt.which : event.keyCode;
+  let inputField = document.getElementById('donation--amount');
   if (
     charCode > 31 &&
     (charCode < 48 || charCode > 57) &&
@@ -13,8 +14,8 @@ const isNumberKey = (evt, element) => {
   )
     return false;
   else {
-    let len = $(element).val().length;
-    let index = $(element).val().indexOf('.');
+    let len = inputField.value.length;
+    let index = inputField.value.indexOf('.');
     if (index > 0 && charCode == 46) {
       return false;
     }
