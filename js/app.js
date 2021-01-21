@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = () => {
   document
     .getElementById('donation--button')
     .addEventListener('click', calculateResults);
