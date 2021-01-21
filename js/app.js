@@ -1,3 +1,13 @@
+window.onload = function () {
+  document
+    .getElementById('donation--button')
+    .addEventListener('click', calculateResults);
+
+  document
+    .getElementById('reset--button')
+    .addEventListener('click', resetCalculator);
+};
+
 let amountValue = 0;
 let selectedSplitType = '';
 let newArr = [];
